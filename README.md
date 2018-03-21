@@ -1,2 +1,2 @@
 # GAS
-Learn JS and GAS
+Created to help me learn JS and GAS ... 

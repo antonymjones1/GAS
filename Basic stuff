@@ -1,0 +1,25 @@
+function createAndSendDocument(){
+
+//Create a new Google Doc named 'Hello World'
+var doc = DocumentApp.create ('Hello World');
+
+//Add a pargraph to the document
+doc.appendParagraph ('This document was created by my first Google Apps Script');
+
+//This next bit was in the video but not in the text on the page!
+// Save and close the document
+doc.saveAndClose();
+
+//Get the URL of the document
+var url = doc.getUrl();
+
+// Get the address of the active user - that's you!
+var emailAddress = Session.getActiveUser().getEmail();
+
+//Send yourself an email with a link to the document
+GmailApp.sendEmail(emailAddress,
+                    'Hello from my first Google Apps Script!',
+                    'Here is a link to the document created by my '+
+                    'first Google Apps Script: ' + url);
+
+}
